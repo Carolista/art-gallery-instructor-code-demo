@@ -1,4 +1,11 @@
 const Header = () => {
+	// TODO #7: Receive the setter prop from the parent where the state
+	//  variable lives
+
+	// TODO #8: Create and import a NavMenu component, place an instance
+	// of it below, and pass along the setter for changing the current page
+	// displayed from App.jsx
+
 	return (
 		<header>
 			<div id="mag">
