@@ -5,7 +5,10 @@ import Header from './components/Header';
 import { mockArtworks } from './mock-data/mockArtworks';
 
 function App() {
-	const artworksJSX = [...mockArtworks].map(artwork => {
+
+    const allArtworks = [...mockArtworks];
+
+	const artworksJSX = allArtworks.map(artwork => {
 		return <ArtworkCard key={artwork.id} artwork={artwork} />;
 	});
 
@@ -14,7 +17,16 @@ function App() {
 			<Header />
 			<main className="main-content">
 				<h1>Artworks</h1>
-				<div className="artwork-card-container">{artworksJSX}</div>
+				{allArtworks.length ? (
+					<div className="artwork-card-container">{artworksJSX}</div>
+				) : (
+					<p>
+						<em>
+							We're sorry — there are no artworks to display at
+							this time.
+						</em>
+					</p>
+				)}
 			</main>
 			<Footer />
 		</div>
