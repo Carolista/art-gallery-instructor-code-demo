@@ -11,8 +11,8 @@ const ArtworkCard = ({ artwork }) => {
 				alt={`Image of ${artwork.title} by ${artwork.artist}`}
 			/>
 			<div className="artwork-card-text">
-				<h3 className="artwork-card-title">{artwork.title}</h3>
-				<h4 className="artwork-card-artist">{artwork.artist}</h4>
+				<h2 className="artwork-card-title">{artwork.title}</h2>
+				<h3 className="artwork-card-artist">{artwork.artist}</h3>
 			</div>
 		</div>
 	);

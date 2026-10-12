@@ -2,6 +2,7 @@ html {
 	font-size: clamp(18px, 2vw, 20px); /* min, preferred, max */
 	height: 100vh;
 	box-sizing: border-box;
+	overscroll-behavior-y: none;
 }
 
 *,
@@ -23,6 +24,7 @@ body {
 	background-color: white;
 	color: #1e323c;
 	font-family: 'Assistant', sans-serif;
+	isolation: isolate;
 	min-height: 100vh;
 	margin: 0;
 	padding: 0;
@@ -73,82 +75,16 @@ main {
 	padding: 10px clamp(20px, 4vw, 30px) 20px;
 }
 
-strong {
-	font-weight: 700;
-}
-
-h1,
-h2,
-h3,
-h4 {
-	font-family: 'Kodchasan', sans-serif;
-	text-transform: uppercase;
-}
-
-h1,
-h3,
-h4,
-h5,
-h6 {
-	margin: 12px 0 0;
-}
-
 h1 {
 	color: #c66311;
 	font-size: 1.4rem;
-	font-weight: 700;
-}
-
-h2 {
-	color: white;
-	background-color: #c66311;
-	font-size: 1.1rem;
-	font-weight: 200;
-	letter-spacing: 6px;
-	width: auto;
-	border-radius: 2px;
-	padding: 5px 8px;
-	margin: 20px 0;
-}
-
-h3 {
-	color: #1e323c;
-	font-size: 1.1rem;
-	font-weight: 700;
-}
-
-h4 {
-	color: #c66311;
-	font-size: 1.1rem;
-}
-
-h5 {
-	color: #c66311;
-	font-weight: 700;
-	font-size: 1.1rem;
-}
-
-h6 {
-	color: #1e323c;
-	font-weight: 600;
-	font-size: 1rem;
+	font-family: 'Kodchasan', sans-serif;
+	text-transform: uppercase;
+	margin: 12px 0 0;
 }
 
 p {
 	margin: 6px 0;
-}
-
-a,
-.link-like {
-	color: #c66311;
-	font-weight: bold;
-	text-decoration: none;
-	cursor: pointer;
-}
-
-a:hover,
-a:active {
-	color: #b95a0a;
 }
 
 /* Layout components */
@@ -160,27 +96,6 @@ a:active {
 	text-transform: uppercase;
 	margin: 0;
 	padding: 0;
-}
-
-.nav-menu {
-	display: flex;
-	flex-direction: row;
-	align-items: flex-end;
-	gap: 12px;
-}
-
-.link:link,
-.link:visited {
-	color: rgba(255, 255, 255, 0.85);
-	font-size: 0.9rem;
-	font-weight: 400;
-	text-decoration: none;
-}
-
-.link:hover {
-	color: white;
-	text-decoration: underline;
-	cursor: pointer;
 }
 
 /* Common components */
@@ -266,17 +181,11 @@ a:active {
 /* 
     NOTE ON RESPONSIVE DESIGN
     
-    I have set my default styles for widths < 380px 
-    (a few devices really are that small) and have used 
-    media queries within the files imported above to set 
-    definitions for larger screen widths on local selectors. 
-    
-    I have breakpoints at:
-    380, 480, 768, 1024, 1200, 1366, and 1600
+    I have used a mobile-first approach and set my default styles 
+    for widths < 380px (a few devices really are that small).
 
-    It is not always necessary to finesse it that much! For
-    both the Unit 1 and Unit 2 final projects, you are not
-    required to have more than 2 breakpoints.
+    I have used media queries to set definitions for larger screen 
+    widths. 
     
     I did not use media queries for variable font sizes and 
     most margin and padding values, but instead used clamp() 
