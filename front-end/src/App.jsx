@@ -5,14 +5,16 @@ import Header from './components/Header';
 import { mockArtworks } from './mock-data/mockArtworks';
 
 function App() {
+	const artworksJSX = [...mockArtworks].map(artwork => {
+		return <ArtworkCard key={artwork.id} artwork={artwork} />;
+	});
+
 	return (
 		<div id="body-container">
 			<Header />
 			<main className="main-content">
 				<h1>Artworks</h1>
-				<div className="artwork-card-container">
-					<ArtworkCard artwork={mockArtworks[0]} />
-				</div>
+				<div className="artwork-card-container">{artworksJSX}</div>
 			</main>
 			<Footer />
 		</div>
@@ -20,4 +22,3 @@ function App() {
 }
 
 export default App;
-g
