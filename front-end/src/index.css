@@ -151,29 +151,7 @@ a:active {
 	color: #b95a0a;
 }
 
-/* Common components */
-
-.card {
-	display: inline-block;
-	vertical-align: top;
-	color: #1e323c;
-	background-color: white;
-	width: 100%;
-	margin-bottom: 15px; /* matches column-gap of container */
-	padding: 12px;
-	border: none;
-	border-radius: 6px;
-	filter: drop-shadow(0px 2px 2px rgba(30, 50, 60, 0.3));
-}
-
-.clickable-card {
-	transition: filter 0.3s ease-in-out;
-}
-
-.clickable-card:hover {
-	filter: drop-shadow(0px 5px 5px rgba(30, 50, 60, 0.5));
-	cursor: pointer;
-}
+/* Layout components */
 
 #mag {
 	font-family: 'Kodchasan', sans-serif;
@@ -183,8 +161,6 @@ a:active {
 	margin: 0;
 	padding: 0;
 }
-
-/* Layout components */
 
 .nav-menu {
 	display: flex;
@@ -207,6 +183,21 @@ a:active {
 	cursor: pointer;
 }
 
+/* Common components */
+
+.card {
+	display: inline-block;
+	vertical-align: top;
+	color: #1e323c;
+	background-color: white;
+	width: 100%;
+	margin-bottom: 15px; /* matches column-gap of container */
+	padding: 12px;
+	border: none;
+	border-radius: 6px;
+	filter: drop-shadow(0px 2px 2px rgba(30, 50, 60, 0.3));
+}
+
 /* Artwork components */
 
 .artwork-card-container {
@@ -214,18 +205,6 @@ a:active {
 	columns: 1;
 	column-gap: 15px;
 	margin-top: 20px;
-}
-
-.artwork-details-container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.artwork-card-image {
-	width: 100%;
-	max-width: 700px;
-	margin-bottom: 8px;
 }
 
 .artwork-card-text {
@@ -240,6 +219,12 @@ a:active {
 	font-weight: 700;
 	text-transform: uppercase;
 	margin-bottom: 4px;
+}
+
+.artwork-card-image {
+	width: 100%;
+	max-width: 700px;
+	margin-bottom: 8px;
 }
 
 .artwork-card-artist {
