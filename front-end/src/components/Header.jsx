@@ -1,7 +1,9 @@
 const Header = () => {
 	return (
 		<header>
-			<div>Midtown Art Gallery</div>
+			<div id="mag">
+				<strong>Midtown</strong> Art Gallery
+			</div>
 		</header>
 	);
 };

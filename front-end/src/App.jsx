@@ -4,11 +4,11 @@ import Header from './components/Header';
 
 function App() {
 	return (
-		<>
+		<div id="body-container">
 			<Header />
-			<main>Hello, World!</main>
+			<main className="main-content">Hello, World!</main>
 			<Footer />
-		</>
+		</div>
 	);
 }
 
