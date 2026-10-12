@@ -1,0 +1,193 @@
+html {
+	font-size: clamp(18px, 2vw, 20px); /* min, preferred, max */
+	height: 100vh;
+	box-sizing: border-box;
+	overscroll-behavior-y: none;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+/* 
+    NOTE: For responsive design, if you define the font-size range 
+    with clamp() on the html selector as shown above, all other elements 
+    where you want the sizes to adjust similarly can be defined in terms
+    of rem (root em) and will be based on the html selector's value range.
+
+    Learn more here: https://clampcalculator.com/
+*/
+
+body {
+	background-color: white;
+	color: #1e323c;
+	font-family: 'Assistant', sans-serif;
+	isolation: isolate;
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+}
+
+body::before {
+	/* Photo credit: https://www.pexels.com/@gdtography-277628/ */
+	background-image: url('./assets/images/white-installation.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	content: ''; /* Essential for ::before to be rendered */
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.1;
+	z-index: -1;
+}
+
+/* 
+    In conjunction with main { flex: 1 }, keeps footer at bottom
+    even when content does not fill page
+*/
+#body-container {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+header,
+footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #1e323c;
+	color: white;
+	width: 100%;
+	padding: 15px clamp(20px, 4vw, 30px) 20px;
+}
+
+main {
+	flex: 1;
+}
+
+.main-content {
+	padding: 10px clamp(20px, 4vw, 30px) 20px;
+}
+
+h1 {
+	color: #c66311;
+	font-size: 1.4rem;
+	font-family: 'Kodchasan', sans-serif;
+	text-transform: uppercase;
+	margin: 12px 0 0;
+}
+
+p {
+	margin: 6px 0;
+}
+
+/* Layout components */
+
+#mag {
+	font-family: 'Kodchasan', sans-serif;
+	font-size: 1.3rem;
+	font-weight: 200;
+	text-transform: uppercase;
+	margin: 0;
+	padding: 0;
+}
+
+/* Common components */
+
+.card {
+	display: inline-block;
+	vertical-align: top;
+	color: #1e323c;
+	background-color: white;
+	width: 100%;
+	margin-bottom: 15px; /* matches column-gap of container */
+	padding: 12px;
+	border: none;
+	border-radius: 6px;
+	filter: drop-shadow(0px 2px 2px rgba(30, 50, 60, 0.3));
+}
+
+/* Artwork components */
+
+.artwork-card-container {
+	/* masonry layout */
+	columns: 1;
+	column-gap: 15px;
+	margin-top: 20px;
+}
+
+.artwork-card-text {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+.artwork-card-title {
+	color: #c66311;
+	font-size: 1.1rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin-bottom: 4px;
+}
+
+.artwork-card-image {
+	width: 100%;
+	max-width: 700px;
+	margin-bottom: 8px;
+}
+
+.artwork-card-artist {
+	color: #1e323c;
+	font-size: 1rem;
+	font-weight: 600;
+	text-transform: none;
+	margin-top: 0;
+}
+
+/** MEDIA QUERIES **/
+
+/* 768-1024 */
+@media screen and (min-width: 768px) {
+	header {
+		flex-direction: row;
+		justify-content: space-between;
+		padding: 15px clamp(20px, 4vw, 30px);
+	}
+	.artwork-card-container {
+		columns: 2;
+	}
+}
+
+/* 1024-1365 */
+@media screen and (min-width: 1024px) {
+	.artwork-card-container {
+		columns: 3;
+	}
+}
+
+/* 1366+ */
+@media screen and (min-width: 1366px) {
+	.artwork-card-container {
+		columns: 4;
+	}
+}
+
+/* 
+    NOTE ON RESPONSIVE DESIGN
+    
+    I have used a mobile-first approach and set my default styles 
+    for widths < 380px (a few devices really are that small).
+
+    I have used media queries to set definitions for larger screen 
+    widths. 
+    
+    I did not use media queries for variable font sizes and 
+    most margin and padding values, but instead used clamp() 
+    to control min, preferred, and max values.
+*/
